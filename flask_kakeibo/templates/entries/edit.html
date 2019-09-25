@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+<form action="{{ url_for('update_entry', id=entry.id) }}" method="POST" class="add_entry">
+  <div class="form-group">
+    <label for="InputCategory">カテゴリ</label>
+    <input type="text" class="form-control" id="InputCategory" name=category value={{ entry.category }}>
+  </div>
+  <div class="form-group">
+    <label for="InputOutcome">収入</label>
+    <input type="text" class="form-control" id="InputOutcome" name=outcome value={{ entry.outcome }}>
+  </div>
+  <div class="form-group">
+    <label for="InputMemo">メモ</label>
+    <input type="text" class="form-control" id="InputMemo" name=memo value={{ entry.memo }}>
+  </div>
+  <button type="submit" class="btn btn-primary">更新</button>
+</form>
+{% endblock %}
