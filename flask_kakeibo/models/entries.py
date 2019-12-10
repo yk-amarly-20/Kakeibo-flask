@@ -5,7 +5,7 @@ from datetime import datetime
 class Entry(db.Model):
     __tablename__ = 'entries'
     id = db.Column(db.Integer, primary_key=True)
-    category = db.Column(db.String(50), unique=True)
+    category = db.Column(db.String(50))
     outcome = db.Column(db.Integer)
     memo = db.Column(db.String(50))
     created_at = db.Column(db.DateTime)
