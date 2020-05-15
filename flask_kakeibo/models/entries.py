@@ -9,7 +9,8 @@ class Entry(db.Model):
     outcome = db.Column(db.Integer)
     memo = db.Column(db.String(50))
     created_at = db.Column(db.DateTime)
-
+    
+    # データを受け取り, テーブルに追加する
     def __init__(self, category=None, outcome=None, memo=None):
         self.category = category
         self.outcome = outcome

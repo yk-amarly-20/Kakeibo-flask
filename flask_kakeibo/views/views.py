@@ -4,6 +4,9 @@ from flask_kakeibo import app
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+
+    # ログイン実装
+    # 実はまあまあ時間かかった
     error = None
     if request.method == "POST":
         if request.form['username'] != app.config['USERNAME']:
@@ -19,6 +22,7 @@ def login():
 
 @app.route('/logout')
 def logout():
+    # ログアウト時はフラッシュメッセージを表示
     flash('ログアウトしました')
     session.pop('logged_in', None)
     return redirect(url_for('show_entries'))
